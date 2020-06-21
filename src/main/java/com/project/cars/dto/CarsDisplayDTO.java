@@ -7,8 +7,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CarsDTO {
-
+public class CarsDisplayDTO {
+	
+	private Integer id;
+	
 	private Integer year;
 
 	private String licensePlate;
@@ -16,4 +18,7 @@ public class CarsDTO {
 	private String model;
 
 	private String color;
+	
+	
+
 }

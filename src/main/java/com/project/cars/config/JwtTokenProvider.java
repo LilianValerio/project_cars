@@ -15,7 +15,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import com.project.cars.errors.ServiceException;
-import com.project.cars.services.UsersService;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
@@ -32,10 +31,6 @@ public class JwtTokenProvider {
     @Value("${security.jwt.token.secret-key:secret-key}")
     private String secretKey;
  
-
-    @Autowired
-    private UsersService userService;
-
     @Autowired
     private CustomUserDetailsService customUserDetailsService;
 

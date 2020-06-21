@@ -15,7 +15,13 @@
 
 #### [#7] - Visualizar informações pessoais;
 
-#### ---- em construção;
+#### [#8] - Listar carros do usuário
+
+#### [#9] - Buscar carro do usuário
+
+#### [#10] - Deletar carro do usuário
+
+#### [#11] - Atualizar carro do usuário
 
 # SOLUÇÃO
 

@@ -60,7 +60,7 @@ public class UsersController {
 	
 	
 	@DeleteMapping(value = "/users/{id}", produces = { "application/json" })
-	public Optional<Users> removeById(@PathVariable("id") int id) {
+	public String removeById(@PathVariable("id") int id) {
 		return userServices.removeById(id);
 	}
 	

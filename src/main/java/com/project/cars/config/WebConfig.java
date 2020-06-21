@@ -24,6 +24,7 @@ public class WebConfig extends WebSecurityConfigurerAdapter {
     protected void configure(final HttpSecurity http) throws Exception {
 
         http.csrf().disable();
+        http.headers().frameOptions().disable();
         http.headers()
                 .contentSecurityPolicy("script-src 'self' https://trustedscripts.example.com; object-src " +
                         "https://trustedplugins.example.com; report-uri /csp-report-endpoint/");

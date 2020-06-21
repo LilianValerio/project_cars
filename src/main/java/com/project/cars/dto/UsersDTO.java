@@ -2,6 +2,9 @@ package com.project.cars.dto;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
+
+import com.project.cars.models.Car;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -29,6 +32,8 @@ public class UsersDTO {
 	private LocalDateTime lastLogin;
 	
 	private LocalDateTime createdAt;
+	
+	private List<CarsDisplayDTO> listCars;
 
 
 }

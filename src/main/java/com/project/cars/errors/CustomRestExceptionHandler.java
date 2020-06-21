@@ -28,7 +28,7 @@ public class CustomRestExceptionHandler extends ResponseEntityExceptionHandler {
             final LoginAlredyExistsException ex) {
         return buildResponseEntity(new ErrorsDTO(ex.getMessage(), HttpStatus.CONFLICT.value()));
     }
-
+    
     @ExceptionHandler(InvalidLoginOrPasswordException.class)
     protected ResponseEntity<Object> InvalidLoginOrPassword(
             final InvalidLoginOrPasswordException ex) {
@@ -65,6 +65,13 @@ public class CustomRestExceptionHandler extends ResponseEntityExceptionHandler {
         return buildResponseEntity(new ErrorsDTO("Unauthorized", HttpStatus.UNAUTHORIZED.value()));
     }
 
+    @ExceptionHandler(PlateAlreadyExistsException.class)
+    protected ResponseEntity<Object> PlateAlreadyExists(
+            final PlateAlreadyExistsException ex) {
+        return buildResponseEntity(new ErrorsDTO(ex.getMessage(), HttpStatus.CONFLICT.value()));
+    }
+    
+    
     @Override
     protected ResponseEntity<Object> handleHttpMessageNotReadable(final HttpMessageNotReadableException ex,
                                                                   final HttpHeaders headers, final HttpStatus status,
@@ -79,7 +86,8 @@ public class CustomRestExceptionHandler extends ResponseEntityExceptionHandler {
 
         return buildResponseEntity(new ErrorsDTO("Something went wrong.", HttpStatus.BAD_REQUEST.value()));
     }
-
+   
+  
     private ResponseEntity<Object> buildResponseEntity(final ErrorsDTO apiError) {
         return new ResponseEntity<>(apiError, HttpStatus.resolve(apiError.getErrorCode()));
     }

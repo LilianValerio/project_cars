@@ -122,8 +122,17 @@ public class UsersService {
 		return modelMapper.map(user.get(), UsersDTO.class);
 	}
 
-	public Optional<Users> removeById(int id) {
-		return userRepository.findById(id);
+	public String removeById(int id) {
+		
+		String message = "deleted user!";
+		
+		try{
+			userRepository.deleteById(id);	
+		}catch (Exception e) {
+			 message = "erro ao deletar!";
+		}
+			
+		return message;
 	}
 
 	@SuppressWarnings("unused")
